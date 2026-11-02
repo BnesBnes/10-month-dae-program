@@ -1,0 +1,34 @@
+import random
+
+print("Welcome to the Number Guessing Game!")
+print("------------------------------------")
+
+name = input("What is your name? ")
+print("Good luck,", name)
+
+number = random.randint(1, 100)
+max_attempts = 10
+attempts = 0
+exceeded_limit = False
+
+while attempts < max_attempts:
+    guess = int(input("Guess a number between 1 and 100: "))
+
+    if guess < 1 or guess > 100:
+        print("You exceeded the number limit! Game over.")
+        exceeded_limit = True
+        break
+
+    attempts += 1
+
+    if guess == number:
+        print("Congratulations!", name, "You guessed correctly!")
+        break
+    elif guess < number:
+        print("Too low! Try again.")
+    else:
+        print("Too high! Try again.")
+
+if not exceeded_limit and attempts == max_attempts and guess != number:
+    print("Game over! You've used all your attempts.")
+    print("The correct number was", number)
