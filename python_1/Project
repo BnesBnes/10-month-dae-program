@@ -11,7 +11,9 @@ def play_game():
     print("Good luck,", name)
 
     number = random.randint(1, 100)
+    #generates a radnom number between 1 aand a 100
     max_attempts = 10
+
     attempts = 0
     exceeded_limit = False
 # This function does not allow the number guessed to be over 100
