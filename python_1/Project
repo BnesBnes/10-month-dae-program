@@ -1,34 +1,44 @@
 import random
 
-print("Welcome to the Number Guessing Game!")
-print("------------------------------------")
+# This function runs the number guessing game and tracks the player's guesses.
+def play_game():
+    print("Welcome to the Number Guessing Game!")
+    print("------------------------------------")
 
-name = input("What is your name? ")
-print("Good luck,", name)
+    name = input("What is your name? ")
+    print("Good luck,", name)
 
-number = random.randint(1, 100)
-max_attempts = 10
-attempts = 0
-exceeded_limit = False
+    number = random.randint(1, 100)
+    max_attempts = 10
+    attempts = 0
+    exceeded_limit = False
 
-while attempts < max_attempts:
-    guess = int(input("Guess a number between 1 and 100: "))
+    guess_history = []
 
-    if guess < 1 or guess > 100:
-        print("You exceeded the number limit! Game over.")
-        exceeded_limit = True
-        break
+    while attempts < max_attempts:
+        guess = int(input("Guess a number between 1 and 100: "))
 
-    attempts += 1
+        if guess < 1 or guess > 100:
+            print("You exceeded the number limit! Game over.")
+            exceeded_limit = True
+            break
 
-    if guess == number:
-        print("Congratulations!", name, "You guessed correctly!")
-        break
-    elif guess < number:
-        print("Too low! Try again.")
-    else:
-        print("Too high! Try again.")
+        guess_history.append(guess)
+        attempts += 1
 
-if not exceeded_limit and attempts == max_attempts and guess != number:
-    print("Game over! You've used all your attempts.")
-    print("The correct number was", number)
+        if guess == number:
+            print("Congratulations!", name, "You guessed correctly!")
+            break
+        elif guess < number:
+            print("Too low! Try again.")
+        else:
+            print("Too high! Try again.")
+
+    print("Your guess history:", guess_history)
+
+    if not exceeded_limit and attempts == max_attempts and guess != number:
+        print("Game over! You've used all your attempts.")
+        print("The correct number was", number)
+
+
+play_game()
