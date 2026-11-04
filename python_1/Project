@@ -7,6 +7,7 @@ def play_game():
     print("------------------------------------")
 
     name = input("What is your name? ")
+    #This function asks the user for their name to continue
     print("Good luck,", name)
 
     number = random.randint(1, 100)
