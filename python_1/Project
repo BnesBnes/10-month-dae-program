@@ -36,6 +36,7 @@ def play_game():
             print("Too high! Try again.")
 
     print("Your guess history:", guess_history)
+# keeps your histroy of each guess and shows it at the end of the run
 
     if not exceeded_limit and attempts == max_attempts and guess != number:
         print("Game over! You've used all your attempts.")
