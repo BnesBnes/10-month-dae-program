@@ -1,3 +1,4 @@
+#start
 import random
 
 # This function runs the number guessing game and tracks the player's guesses.
@@ -42,3 +43,4 @@ def play_game():
 
 
 play_game()
+ 
