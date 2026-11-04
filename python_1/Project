@@ -23,6 +23,7 @@ def play_game():
 
         if guess < 1 or guess > 100:
             print("You exceeded the number limit! Game over.")
+            #if the limit is used (10 guesses) the game is over
             exceeded_limit = True
             break
 
