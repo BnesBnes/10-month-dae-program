@@ -13,6 +13,7 @@ def play_game():
     max_attempts = 10
     attempts = 0
     exceeded_limit = False
+# This function does not allow the number guessed to be over 100
 
     guess_history = []
 
